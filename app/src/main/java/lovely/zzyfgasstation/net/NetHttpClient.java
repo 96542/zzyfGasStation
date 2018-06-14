@@ -6,8 +6,9 @@ package lovely.zzyfgasstation.net;
  */
 public interface NetHttpClient {
 
-    //接口请求地址
-    String NET_SERVER = "http://222.137.19.163:4545"; //测试地址
+    //接口请求地址   s1550l1032.iok.la
+//    String NET_SERVER = "http://222.137.19.163:4545"; //测试地址
+    String NET_SERVER = "http://s1550l1032.iok.la:4545"; //测试地址
 
     //登录
     String LOGIN = NET_SERVER + "/login";

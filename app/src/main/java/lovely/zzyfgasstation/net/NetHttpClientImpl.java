@@ -68,12 +68,13 @@ public class NetHttpClientImpl implements NetHttpClient {
 
     //登录
     public void login(String userid, String password, ResultCallBack callBack) {
-        RequestParams params = new RequestParams(NetHttpClient.LOGIN);
-//        if (TextUtils.isEmpty(LoginManager.newInstance(context).getUrl())) {
-//            ToastUtils.showToast(context, "基础地址为空");
-//            return;
-//        }
-//        RequestParams params = new RequestParams(LoginManager.newInstance(context).getUrl() + "/login");
+//        RequestParams params = new RequestParams(NetHttpClient.LOGIN);
+        if (TextUtils.isEmpty(LoginManager.newInstance(context).getUrl())) {
+            ToastUtils.showToast(context, "基础地址为空");
+//            LoginManager.newInstance(context).setFirst(true);
+            return;
+        }
+        RequestParams params = new RequestParams(LoginManager.newInstance(context).getUrl() + "/login");
         params.addBodyParameter("userid", userid);
         params.addBodyParameter("Pwd", password);
         Log.e(TAG, params + "");
@@ -82,7 +83,8 @@ public class NetHttpClientImpl implements NetHttpClient {
 
     //注销
     public void unLogin(ResultCallBack callBack) {
-        RequestParams params = new RequestParams(NetHttpClient.UN_LOGIN);
+//        RequestParams params = new RequestParams(NetHttpClient.UN_LOGIN);
+        RequestParams params = new RequestParams(LoginManager.newInstance(context).getUrl()+"/unlogin");
         UserInfo mUserInfo = LoginManager.newInstance(context).getUserInfo();
         if (null != mUserInfo) {
             params.addBodyParameter("userid", mUserInfo.getUserid());
@@ -94,7 +96,8 @@ public class NetHttpClientImpl implements NetHttpClient {
 
     //获取油枪列表
     public void getGunList(ResultCallBack callBack) {
-        RequestParams params = new RequestParams(NetHttpClient.GET_OILGUN);
+//        RequestParams params = new RequestParams(NetHttpClient.GET_OILGUN);
+        RequestParams params = new RequestParams(LoginManager.newInstance(context).getUrl()+"/getgunlist");
         UserInfo mUserInfo = LoginManager.newInstance(context).getUserInfo();
         if (null != mUserInfo) {
             params.addBodyParameter("userid", mUserInfo.getUserid());
@@ -106,7 +109,8 @@ public class NetHttpClientImpl implements NetHttpClient {
 
     //获取某个油枪下的未结账列表
     public void getNoPayList(String num, ResultCallBack callBack) {
-        RequestParams params = new RequestParams(NetHttpClient.GET_NO_PAY_LIST);
+//        RequestParams params = new RequestParams(NetHttpClient.GET_NO_PAY_LIST);
+        RequestParams params = new RequestParams(LoginManager.newInstance(context).getUrl()+"/tradelist");
         UserInfo mUserInfo = LoginManager.newInstance(context).getUserInfo();
         if (null != mUserInfo) {
             params.addBodyParameter("userid", mUserInfo.getUserid());
@@ -119,7 +123,8 @@ public class NetHttpClientImpl implements NetHttpClient {
 
     //获取某个油枪下的未结账列表
     public void getCashPayList(String num, ResultCallBack callBack) {
-        RequestParams params = new RequestParams(NetHttpClient.GET_CASH_LIST);
+//        RequestParams params = new RequestParams(NetHttpClient.GET_CASH_LIST);
+        RequestParams params = new RequestParams(LoginManager.newInstance(context).getUrl()+"/tradelistCase");
         UserInfo mUserInfo = LoginManager.newInstance(context).getUserInfo();
         if (null != mUserInfo) {
             params.addBodyParameter("userid", mUserInfo.getUserid());

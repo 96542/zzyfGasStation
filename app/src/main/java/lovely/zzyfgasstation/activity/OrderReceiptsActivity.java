@@ -123,7 +123,7 @@ public class OrderReceiptsActivity extends BaseActivity implements View.OnClickL
     private void payType(final String msg) {
         //参数  amt 金额  isNeedPrintReceipt 是否打印  tradeType 支付方式(例如:扫码) all/usescan
         String str = "{" +
-                "    \"amt\": \"200\"," +
+                "    \"amt\": \"" + mTv_Price.getText().toString() + "\"," +
                 "    \"isNeedPrintReceipt\": false," +
                 "    \"tradeType\": \"all\"" +
                 "}";

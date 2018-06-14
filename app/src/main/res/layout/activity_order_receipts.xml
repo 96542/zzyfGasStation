@@ -288,6 +288,55 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
             android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/ll_wechat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:layout_weight="1"
+                android:background="@drawable/pay_type_bg"
+                android:paddingBottom="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/icon_pay_wx"
+                    android:drawablePadding="@dimen/dp_20"
+                    android:gravity="center"
+                    android:text="微信"
+                    android:textColor="@color/receipts_black" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_alipay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:layout_weight="1"
+                android:background="@drawable/pay_type_bg"
+                android:paddingBottom="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/icon_pay_zfb"
+                    android:drawablePadding="@dimen/dp_20"
+                    android:gravity="center"
+                    android:text="支付宝"
+                    android:textColor="@color/receipts_black" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:id="@+id/ll_cash"
@@ -310,58 +359,6 @@
                     android:text="现金"
                     android:textColor="@color/receipts_black" />
             </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_wechat"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dp_20"
-                android:layout_marginRight="@dimen/dp_20"
-                android:layout_weight="1"
-                android:background="@drawable/pay_type_bg"
-                android:paddingBottom="@dimen/dp_10"
-                android:paddingLeft="@dimen/dp_20"
-                android:paddingTop="@dimen/dp_10">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/icon_pay_wx"
-                    android:drawablePadding="@dimen/dp_20"
-                    android:gravity="center"
-                    android:text="微信"
-                    android:textColor="@color/receipts_black" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:id="@+id/ll_alipay"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dp_20"
-                android:layout_marginRight="@dimen/dp_20"
-                android:layout_weight="1"
-                android:background="@drawable/pay_type_bg"
-                android:paddingBottom="@dimen/dp_10"
-                android:paddingLeft="@dimen/dp_20"
-                android:paddingTop="@dimen/dp_10">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/icon_pay_zfb"
-                    android:drawablePadding="@dimen/dp_20"
-                    android:gravity="center"
-                    android:text="支付宝"
-                    android:textColor="@color/receipts_black" />
-            </LinearLayout>
-
             <LinearLayout
                 android:id="@+id/ll_card"
                 android:layout_width="0dp"

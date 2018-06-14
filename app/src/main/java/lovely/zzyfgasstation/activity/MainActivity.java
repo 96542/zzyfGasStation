@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initData() {
+
         new RecyclerViewHelper<oilGunList>(mRv, new GridLayoutManager(this, 2), R.layout.item_for_gas_station) {
             @Override
             public void convertView(BaseViewHolder helper, oilGunList item) {

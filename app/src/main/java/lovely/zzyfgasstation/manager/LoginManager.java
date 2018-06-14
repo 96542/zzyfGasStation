@@ -44,19 +44,21 @@ public class LoginManager extends BaseManager {
     }
 
     public void setFirst(boolean isTrue) {
-        sp.edit().putBoolean("isFirst", isTrue).apply();
+        sp.edit().putBoolean("isFirst", isTrue).commit();
     }
 
     public boolean getIsFirst() {
-        return isFirst;
+        boolean isFirst = sp.getBoolean("isFirst", true);
+        Log.e(TAG,isFirst+"56565");
+        return sp.getBoolean("isFirst", true);
     }
 
     public void setUrl(String url) {
-        sp.edit().putString("url", url).apply();
+        sp.edit().putString("url", url).commit();
     }
 
     public String getUrl() {
-        return BaseUrl;
+        return "".equals(BaseUrl) ? sp.getString("url", "") : BaseUrl;
     }
 
     public UserInfo getUserInfo() {

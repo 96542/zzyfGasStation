@@ -88,11 +88,14 @@ public class LoginActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(mEt_Name.getText().toString().trim())) {
                     ToastUtils.showToast(getBaseContext(), "地址不能为空");
                 } else {
-                    if (RexUtils.isIP(mEt_Name.getText().toString().trim())) {
+//                    if (RexUtils.isIP(mEt_Name.getText().toString().trim())) {
                         Log.e(TAG, mEt_Name.getText().toString().trim());
-//                        LoginManager.newInstance(getBaseContext()).setFirst(false);
-//                        LoginManager.newInstance(getBaseContext()).setUrl(mEt_Name.getText().toString().trim());
+                        LoginManager.newInstance(LoginActivity.this).setFirst(false);
+                        LoginManager.newInstance(LoginActivity.this).setUrl(mEt_Name.getText().toString().trim());
+                    if (mPopupWindow != null) {
+                        mPopupWindow.dismiss();
                     }
+//                    }
                 }
 
             }
